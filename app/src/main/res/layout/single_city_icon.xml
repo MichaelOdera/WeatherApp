@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="2dp"
+    android:layout_height="wrap_content">
+
+    <info.androidhive.fontawesome.FontTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fa_cloud_sun_rain_solid"
+        android:layout_margin="2dp"
+        app:solid_icon="true"/>
+
+
+</LinearLayout>
