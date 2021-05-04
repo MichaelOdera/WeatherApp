@@ -16,6 +16,7 @@ import com.michael.weatherapp.citylistdatasource.CityList;
 import com.michael.weatherapp.models.Main;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -37,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mCityList = new CityList();
         fetchedCitiesListArray = mCityList.getCityList();
-        System.out.println("My fetched cities list ______ +++++ _______" +fetchedCitiesListArray.toString());
+        //System.out.println("My fetched cities list ______ +++++ _______" +fetchedCitiesListArray.toString());
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
-        getSupportActionBar().setCustomView(R.layout.custom_app_bar);
+        getSupportActionBar().setCustomView(R.layout.main_activity_appbar);
 
 
 
@@ -58,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
         mCitiesRecyclerView.setLayoutManager(layoutManager);
         mCitiesRecyclerView.setAdapter(mCitiesListAdapter);
         mCitiesRecyclerView.setHasFixedSize(true);
+
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
 
     }
 }
