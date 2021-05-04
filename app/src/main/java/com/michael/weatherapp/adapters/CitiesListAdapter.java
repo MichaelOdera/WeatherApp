@@ -65,7 +65,6 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
         }
 
         public void bindCity(String cityName) {
-            System.out.println("City " + cityName);
             mSingleCityNameTextView.setText(cityName);
 
         }
@@ -75,7 +74,8 @@ public class CitiesListAdapter extends RecyclerView.Adapter<CitiesListAdapter.Ci
             String cityName = mSingleCityNameTextView.getText().toString();
             Intent intent = new Intent(mContext, CityDetailActivity.class);
             intent.putExtra("cityName", cityName);
-            mContext.startActivity(intent);
+            Toast.makeText(mContext, cityName, Toast.LENGTH_SHORT).show();
+            this.mContext.startActivity(intent);
 
 
         }
