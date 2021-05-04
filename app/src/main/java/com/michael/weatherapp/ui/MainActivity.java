@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         View view = getSupportActionBar().getCustomView();
 
         inflateRecyclerView();
