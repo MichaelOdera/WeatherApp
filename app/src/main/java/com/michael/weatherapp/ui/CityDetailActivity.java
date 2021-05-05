@@ -191,11 +191,11 @@ public class CityDetailActivity extends AppCompatActivity implements View.OnClic
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             Instant instant = Instant.ofEpochSecond(timezone + sunset);
 
-            //System.out.println("Instant of Epoch Sunset >>>>>> ++++++ >>>>>>  " +instant);
+
             mSunsetTextView.setText(instant.toString().replace("T", " ").replace("Z", " "));
 
             Instant sunriseInstant = Instant.ofEpochSecond(sunrise  - timezone);
-           // System.out.println("Instant of Epoch Sunrise >>>>>> ++++++ >>>>>>  " +sunriseInstant);
+
             mSunriseTextView.setText(sunriseInstant.toString().replace("T", " ").replace("Z", " "));
 
             String messageTitle = mCityWeatherModel.getWeather().get(0).getMain();

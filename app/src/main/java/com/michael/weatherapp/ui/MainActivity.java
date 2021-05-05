@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mCityList = new CityList();
         fetchedCitiesListArray = mCityList.getCityList();
-        //System.out.println("My fetched cities list ______ +++++ _______" +fetchedCitiesListArray.toString());
+
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
