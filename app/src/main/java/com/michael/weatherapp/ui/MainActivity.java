@@ -65,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
                 intent.putExtra(Intent.EXTRA_TEXT, "Check out My Weather App "+ BuildConfig.APPLICATION_ID);
+                intent.setType("text/plain");
                 startActivity(intent);
             }
         });
