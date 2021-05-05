@@ -7,9 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
+import com.michael.weatherapp.BuildConfig;
 import com.michael.weatherapp.R;
 import com.michael.weatherapp.adapters.CitiesListAdapter;
 import com.michael.weatherapp.citylistdatasource.CityList;
@@ -51,8 +54,22 @@ public class MainActivity extends AppCompatActivity {
 
         View view = getSupportActionBar().getCustomView();
 
+        ImageView imageView = view.findViewById(R.id.buttonShareImageView);
+        shareImageViewMethod(imageView);
+
         inflateRecyclerView();
 
+    }
+
+    private void shareImageViewMethod(ImageView imageView) {
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, "Check out My Weather App "+ BuildConfig.APPLICATION_ID);
+                startActivity(intent);
+            }
+        });
     }
 
     private void inflateRecyclerView() {
